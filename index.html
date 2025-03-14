@@ -40,11 +40,13 @@
         <h1>Eka & Shenny</h1>
         <p>Akan melangsungkan resepsi pernikahan dalam:</p>
         <div class="simply-countdown"></div>
-        <a href="#undangan" class="btn btn-lg mt-4">Lihat Undangan</a>
+        <a href="#home" class="btn btn-lg mt-4" onClick="enableScroll()"
+          >Lihat Undangan</a
+        >
       </main>
     </section>
 
-    <nav class="navbar navbar-expand-md bg-trasparent sticky-top mynavbar">
+    <!-- <nav class="navbar navbar-expand-md bg-trasparent sticky-top mynavbar">
       <div class="container">
         <a class="navbar-brand" href="#">E&S</a>
         <button
@@ -84,7 +86,7 @@
           </div>
         </div>
       </div>
-    </nav>
+    </nav> -->
 
     <!-- Start Home -->
     <section id="home" class="home">
@@ -235,6 +237,84 @@
     </section>
     <!-- End Info -->
 
+    <!-- Start Story -->
+    <section id="story" class="story">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-10 text-center">
+            <span>Bagaimana Cinta Kami Bersemi</span>
+            <h2>Cerita Kami</h2>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro,
+              similique non soluta nulla asperiores voluptatem.
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <ul class="timeline">
+              <li>
+                <div
+                  class="timeline-image"
+                  style="background-image: url(img/cbd.jpg)"
+                ></div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h3>Pertama Bertemu</h3>
+                    <span>2 Agustus 2016</span>
+                  </div>
+                  <div class="timeline-body">
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Quos, modi autem? Commodi autem quo quia?
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="timeline-inverted">
+                <div
+                  class="timeline-image"
+                  style="background-image: url(https://picsum.photos/300/300)"
+                ></div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h3>Mulai Serius</h3>
+                    <span>1 Januari 2026</span>
+                  </div>
+                  <div class="timeline-body">
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Architecto enim eaque obcaecati odit itaque explicabo
+                      quisquam quos at.
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div
+                  class="timeline-image"
+                  style="background-image: url(https://picsum.photos/301/301)"
+                ></div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h3>Tunangan</h3>
+                    <span>9 Mei 2027</span>
+                  </div>
+                  <div class="timeline-body">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Eveniet, deleniti distinctio. Esse quas sit explicabo
+                    corporis magni qui expedita a.
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Story -->
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
@@ -275,6 +355,40 @@
     </script>
 
     <script>
+      const rootElement = document.querySelector(":root");
+      function disableScroll() {
+        scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+
+        window.onscroll = function () {
+          window.scrollTo(scrollTop, scrollLeft);
+        };
+
+        rootElement.style.scrollBehavior = "auto";
+      }
+
+      function enableScroll() {
+        window.onscroll = function () {};
+        rootElement.style.scrollBehavior = "smooth";
+        // localStorage.setItem('opened', 'true');
+      }
+
+      disableScroll();
+
+      // function enableScroll() {
+      //   window.onscroll = function () {};
+      //   rootElement.style.scrollBehavior = "smooth";
+      //   // localStorage.setItem("opened", "true");
+      //   playAudio();
+      // }
+
+      // if (!localStorage.getItem("opened")) {
+      //   disableScroll();
+      // }
+      disableScroll();
+    </script>
+
+    <!-- <script>
       const stickyTop = document.querySelector(".sticky-top");
       const offcanvas = document.querySelector(".offcanvas");
 
@@ -285,6 +399,6 @@
       offcanvas.addEventListener("hidden.bs.offcanvas", function () {
         stickyTop.style.overflow = "hidden";
       });
-    </script>
+    </script> -->
   </body>
 </html>
